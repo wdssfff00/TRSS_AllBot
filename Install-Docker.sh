@@ -142,14 +142,14 @@ RUN ln -vsf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime\
  && chmod 755 /usr/local/bin/tsab
 WORKDIR /root/TRSS_AllBot
 CMD ["bash","-c","bash AutoStart.sh;while bash Main.sh;do bash Main.sh docker;done"]
-EXPOSE 2536 2955 3321 8080-8081 8088 13579 50831 54980'>Dockerfile
+EXPOSE 2536 2955 3321 8080-8081 8088 13579 50052 50831 54980'>Dockerfile
 docker build -t trss:allbot .||abort "Docker 容器构建失败"
 echo "
 $Y- 正在启动 Docker 容器$O
 "
 docker rm -f $DKNAME 2>/dev/null
 docker image prune -f
-docker run -itd -h TRSS-AllBot --name $DKNAME -v "$DIR":/root/TRSS_AllBot --log-driver none --restart always $([ -S /var/run/docker.sock ]&&echo "-v /var/run/docker.sock:/var/run/docker.sock") $([ $DKNAME = TRSS_AllBot ]&&echo "--network host"||echo "-p 42536:2536 -p 42955:2955 -p 43321:3321 -p 48080:8080 -p 48081:8081 -p 48088:8088 -p 13579:13579 -p 50831:50831 -p 54980:54980") trss:allbot||abort "Docker 容器启动失败"
+docker run -itd -h TRSS-AllBot --name $DKNAME -v "$DIR":/root/TRSS_AllBot --log-driver none --restart always $([ -S /var/run/docker.sock ]&&echo "-v /var/run/docker.sock:/var/run/docker.sock") $([ $DKNAME = TRSS_AllBot ]&&echo "--network host"||echo "-p 42536:2536 -p 42955:2955 -p 43321:3321 -p 48080:8080 -p 48081:8081 -p 48088:8088 -p 13579:13579 -p 50052:50052 -p 50831:50831 -p 54980:54980") trss:allbot||abort "Docker 容器启动失败"
 mkdir -vp "$CMDPATH"&&
 echo -n 'if [ -n "$1" ];then exec docker exec -it '$DKNAME' bash Main.sh "$@";else exec docker attach '$DKNAME';fi'>"$CMDPATH/$CMD"&&
 chmod 755 "$CMDPATH/$CMD"||abort "脚本执行命令 $CMDPATH/$CMD 设置失败，手动执行命令：docker attach $DKNAME"
