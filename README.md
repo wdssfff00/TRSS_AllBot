@@ -11,12 +11,9 @@
 
 统一机器人管理脚本
 
-[![访问量](https://visitor-badge.glitch.me/badge?page_id=TimeRainStarSky.TRSS_AllBot&right_color=red&left_text=访%20问%20量)](https://github.com/TimeRainStarSky/TRSS_AllBot)
 [![Stars](https://img.shields.io/github/stars/TimeRainStarSky/TRSS_AllBot?color=yellow&label=收藏)](../../stargazers)
 [![Downloads](https://img.shields.io/github/downloads/TimeRainStarSky/TRSS_AllBot/total?color=blue&label=下载)](Install.sh)
 [![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/TRSS_AllBot?color=green&label=发行版)](../../releases/latest)
-
-[![访问量](https://profile-counter.glitch.me/TimeRainStarSky-TRSS_AllBot/count.svg)](https://github.com/TimeRainStarSky/TRSS_AllBot)
 
 </div>
 
@@ -39,3 +36,15 @@
 - [爱发电](https://afdian.net/a/TimeRainStarSky)
 - [Partme](https://partme.com/TimeRainStarSky)
 - [感谢名单](https://github.com/TimeRainStarSky/SponsorList)
+
+## 数据安全
+
+1. 此程序可能会收集以下数据
+
+- 设备机型
+- 系统环境
+- fastfetch
+
+2. 其中不包含用户隐私数据
+3. 数据仅用于改进程序体验
+4. 不与第三方共享任何数据
